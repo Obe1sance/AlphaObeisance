@@ -12,8 +12,9 @@
   ];
 
   nixpkgs.config.allowUnfree = true;          # Allow the installation of unfree packages like Nvidia drivers
+              
+  system.stateVersion = "23.11";              # Set to your NixOS version. Check latest version here https://nixos.org/download/
 
-  system.stateVersion = "23.11";              # Set to your NixOS version
 
   boot.loader.systemd-boot.enable = true;     # Enable systemd-boot instead of GRUB
   boot.kernelPackages = pkgs.linuxPackages_latest;  # Use the latest stable kernel
