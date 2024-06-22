@@ -1,12 +1,4 @@
 #!/bin/bash
-#
-# AlphaArch System Setup Script
-# This script sets up an Arch Linux-based system with required packages and configurations.
-# Make sure to review and customize this script to suit your needs before running it.
-#
-# Author: AlphaObeisance
-# Version: 1.0
-# Date: October 18, 2023
 
 # Define colors for notifications
 SUCCESS_COLOR="\033[32m"
