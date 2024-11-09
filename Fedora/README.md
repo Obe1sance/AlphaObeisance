@@ -1,4 +1,4 @@
-Fedora derivatives, leveraging Fedora's package management and system configurations. Fedora-based distributions typically adhere closely to Fedora's standards and tools, ensuring compatibility for administrative scripts like this user management tool.
+The following scripts are intende for use on Fedora and should be compatible with most Fedora derivative distributions, as they typically maintain compatibility with the core Fedora system. Debian derivatives generally inherit package management, core utilities, and configurations from Fedora itself.
 
 Some notable Fedora-based distributions where this script should operate effectively include:
 
