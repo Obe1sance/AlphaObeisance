@@ -1,4 +1,4 @@
-This user management script for Debian should be compatible with most Debian derivative distributions, as they typically maintain compatibility with the core Debian system. Debian derivatives generally inherit package management, core utilities, and configurations from Debian itself.
+The following scripts are intende for use on Debian and should be compatible with most Debian derivative distributions, as they typically maintain compatibility with the core Debian system. Debian derivatives generally inherit package management, core utilities, and configurations from Debian itself.
 
 Some notable Debian-based distributions where this script should function well include:
 
