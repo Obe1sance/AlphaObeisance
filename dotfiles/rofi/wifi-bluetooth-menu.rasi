@@ -1,0 +1,127 @@
+configuration {
+  modi:                     "drun";
+  show-icons:               false;
+  font:                     "JetBrainsMono Nerd Font Bold 8";
+}
+
+@theme "~/.config/rofi/theme.rasi"
+
+/* ------------------------- Main Window ------------------------- */
+
+window {
+  enabled:                  true;
+  location:                 north;
+  anchor:                   south;
+  y-offset:                 3px;
+  width:                    250px;
+  fullscreen:               false;
+  transparency:             "real";
+  border:                   2px;
+  border-radius:            0;
+  border-color:             @main-br;
+  background-color:         @main-bg;
+
+  children:                 [ "mainbox" ];
+}
+
+/* ----------------------- Main Container ------------------------ */
+
+mainbox {
+  enabled:                  true;
+  orientation:              vertical;
+  padding:                  2.2px 0;
+  background-color:         inherit;
+  text-color:               @main-fg;
+
+  children:                 [ "wallbox", "listbox" ];
+}
+
+/* ----------------------- Input Container ----------------------- */
+
+wallbox {
+  enabled:                  false;
+  orientation:              horizontal;
+  expand:                   false;
+  margin:                   8px 8px;
+  padding:                  -22px;
+  border-radius:            0;
+  background-color:         @input-bg;
+
+  children:                 [ "inputbar" ];
+}
+
+/* --------------------------- Input Bar ------------------------- */
+
+inputbar {
+  enabled:                  true;
+  expand:                   true;
+  background-color:         inherit;
+
+  children:                 [ "entry" ];
+}
+
+/* ---------------------------- Entry ---------------------------- */
+
+entry {
+  enabled:                  true;
+  padding:                  28.8px;
+  cursor:                   text;
+  background-color:         inherit;
+  text-color:               @main-fg;
+}
+
+/* ----------------------- List Container ------------------------ */
+
+listbox {
+  enabled:                  true;
+  orientation:              vertical;
+  background-color:         inherit;
+
+  children:                 [ "listview" ];
+}
+
+/* -------------------------- List View -------------------------- */
+
+listview {
+  enabled:                  true;
+  layout:                   vertical;
+  cycle:                    false;
+  dynamic:                  true;
+  fixed-height:             true;
+  fixed-columns:            false;
+  expand:                   false;
+  reverse:                  false;
+  columns:                  1;
+  lines:                    7;
+  padding:                  6.4px 8px;
+  spacing:                  0;
+  background-color:         inherit;
+  scrollbar:                false;
+}
+
+/* ------------------------ List Elements ------------------------ */
+
+element {
+  enabled:                  true;
+  padding:                  6.4px;
+  cursor:                   pointer;
+  background-color:         transparent;
+  text-color:               @main-fg;
+}
+
+element selected.normal {
+  border-radius:            0;
+  background-color:         @select-bg;
+  text-color:               @select-fg;
+}
+
+/* ----------------------- Element Text -------------------------- */
+
+element-text {
+  enabled:                  true;
+  vertical-align:           0;
+  horizontal-align:         0;
+  cursor:                   inherit;
+  background-color:         transparent;
+  text-color:               inherit;
+}

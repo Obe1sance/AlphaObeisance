@@ -1,0 +1,14 @@
+/* 
+  bg - background
+  fg - foreground
+  br - border
+*/
+
+* {
+  main-fg:        #f1f1f1;    /* Light off-white for text */
+  main-bg:        #0a2d21;    /* Darker forest green for the main background */
+  main-br:        #a18c6b;    /* Darker khaki color for borders */
+  input-bg:       #163d2b;    /* Dark forest green for input fields */
+  select-bg:      #8f7c5e;    /* Darker khaki for selected items */
+  select-fg:      #0a2d21;    /* Dark forest green for selected text */
+}

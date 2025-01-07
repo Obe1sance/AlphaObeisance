@@ -1,0 +1,2 @@
+#Backup utility is just one of my first bash scripts. Modify paths to create your own backup utility. Can set up the script to execute on use of alias for expedited use.
+#Deploy-AI script effectively installs, actives and deploys Ollama with OpenWebUI effectively creating locally hosted LLM. Provides an update feature for Ollama/Openwebui as well as an Option to deploy Stable Diffusion with the AUTOMATIC1111 front end

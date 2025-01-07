@@ -1,0 +1,83 @@
+# Main background, empty for terminal default, need to be empty if you want transparent background
+theme[main_bg]="#1A2C22"  # Dark teal-green for the main background, deep and calming
+
+# Main text color
+theme[main_fg]="#C8E3D4"  # Light mint green for the main text, soft and easy on the eyes
+
+# Title color for boxes
+theme[title]="#A0C8A0"  # Muted soft green for box titles, providing subtle contrast with the background
+
+# Highlight color for keyboard shortcuts
+theme[hi_fg]="#6B9D6F"  # Soft, vibrant green for highlighting, offering contrast without being too harsh
+
+# Background color of selected item in processes box
+theme[selected_bg]="#2A4D34"  # Dark teal-green for selected items, distinct but not too bright
+
+# Foreground color of selected item in processes box
+theme[selected_fg]="#C8E3D4"  # Mint green for selected text, stands out against the dark selection background
+
+# Color of inactive/disabled text
+theme[inactive_fg]="#8A9A8A"  # Muted green-grey for inactive elements, subtle but readable
+
+# Color of text appearing on top of graphs, i.e uptime and current network graph scaling
+theme[graph_text]="#C8E3D4"  # Light mint green for graph text, highly readable on top of the green graphs
+
+# Background color of the percentage meters
+theme[meter_bg]="#2A4D34"  # Dark green for meter backgrounds, keeping the natural tone
+
+# Misc colors for processes box including mini cpu graphs, details memory graph and details status text
+theme[proc_misc]="#C8E3D4"  # Mint green for process details text, balancing the green background
+
+# CPU, Memory, Network, Proc box outline colors
+theme[cpu_box]="#4B7550"  # Olive green for CPU box outline, grounding the box with a natural tone
+theme[mem_box]="#77A78C"  # Muted teal green for the Memory box, fitting with the overall theme
+theme[net_box]="#5C8C7B"  # Muted teal for Network, adding contrast without overpowering
+theme[proc_box]="#6A8B6A"  # Olive green for Processes box, subtle and fits the earthy look
+
+# Box divider line and small boxes line color
+theme[div_line]="#4A6450"  # Dark teal divider lines, blending in but still providing structure
+
+# Temperature graph color (Green -> Yellow -> Red)
+theme[temp_start]="#4B7550"  # Olive green for low temperatures
+theme[temp_mid]="#A8C8A1"  # Light green for mid-range temperatures
+theme[temp_end]="#D0A23F"  # Warm yellow for high temperatures
+
+# CPU graph colors (Teal -> Olive)
+theme[cpu_start]="#4B7550"  # Olive green for the start of the CPU graph
+theme[cpu_mid]="#77A78C"  # Muted teal green for the middle range
+theme[cpu_end]="#A8C8A1"  # Light mint green for the higher CPU usage range
+
+# Mem/Disk free meter (Teal -> Light Green)
+theme[free_start]="#4B7550"  # Dark teal green for free memory/disk space
+theme[free_mid]="#77A78C"  # Muted teal green for mid-range space
+theme[free_end]="#A8C8A1"  # Light green for nearly full space, providing contrast
+
+# Mem/Disk cached meter (Teal -> Mint Green)
+theme[cached_start]="#77A78C"  # Muted teal green for the start of cached space
+theme[cached_mid]="#A0B78A"  # Lighter muted green for the middle range
+theme[cached_end]="#4B7550"  # Dark teal green for fully cached space
+
+# Mem/Disk available meter (Teal -> Light Green)
+theme[available_start]="#4B7550"  # Olive green for available space
+theme[available_mid]="#77A78C"  # Muted teal for mid-available space
+theme[available_end]="#A8C8A1"  # Light mint green as available space fills
+
+# Mem/Disk used meter (Teal -> Mint Green)
+theme[used_start]="#4B7550"  # Dark teal green for the start of used space
+theme[used_mid]="#77A78C"  # Muted teal as space is used
+theme[used_end]="#A8C8A1"  # Light mint green as space usage peaks
+
+# Download graph colors (Teal -> Mint Green)
+theme[download_start]="#4B7550"  # Dark teal green for the start of the download
+theme[download_mid]="#77A78C"  # Muted teal for the middle
+theme[download_end]="#A8C8A1"  # Light mint green for completed downloads
+
+# Upload graph colors (Teal -> Mint Green)
+theme[upload_start]="#4B7550"  # Dark teal green for the upload start
+theme[upload_mid]="#77A78C"  # Muted teal for the mid-upload range
+theme[upload_end]="#A8C8A1"  # Light mint green for the full upload range
+
+# Process box color gradient for threads, mem, and cpu usage (Teal -> Mint Green)
+theme[process_start]="#4B7550"  # Dark teal green for the start of process box usage
+theme[process_mid]="#77A78C"  # Muted teal for the middle of process usage
+theme[process_end]="#A8C8A1"  # Light mint green for the end of process usage

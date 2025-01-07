@@ -1,0 +1,127 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "source": "~/.config/fastfetch/supertux.png",
+    "type": "auto",
+    "color": { "1": "green" },
+    "color": { "2": "cyan" },
+    "color": { "3": "green" },
+    "color": { "4": "cyan" },
+    "color": { "5": "green" },
+    "color": { "6": "cyan" },
+    "color": { "7": "green" },
+    "color": { "8": "cyan" },
+    "color": { "9": "green" },
+    "height": 1,
+    "width": 1,
+    "padding": {
+      "top": 2,
+      "left": 5,
+    },
+  },
+  "modules": [
+    "break",
+    {
+      "type": "custom",
+      "format": "\u001b[36m┌---─────────────────---─\u001b[1;33mService Time\u001b[0m\u001b[36m─---─────────────────---┐\u001b[0m",
+    },
+    {
+      "type": "command",
+      "key": "\u001b[36m│ ├|| \u001b[32mOS Age: \u001b[0m",
+      "keyColor": "green",
+      "text": "birth_install=$(stat -c %W /home); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days",
+    },
+    {
+      "type": "uptime",
+      "key": "\u001b[36m│ ├|| \u001b[32mUptime: \u001b[0m",
+      "keyColor": "green",
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[36m└---─────────────---──────────────────────---─────────────---┘\u001b[0m",
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": "\u001b[36m┌---───────────────────---─\u001b[1;33mHardware\u001b[0m\u001b[36m─---───────────────────---┐\u001b[0m",
+    },
+    {
+      "type": "host",
+      "key": "\u001b[36m│ ├|| \u001b[32mPC\u001b[0m",
+      "keyColor": "green",
+    },
+    {
+      "type": "cpu",
+      "key": "\u001b[36m│ ├|| \u001b[32mCPU: \u001b[0m",
+      "keyColor": "green",
+    },
+    {
+      "type": "gpu",
+      "key": "\u001b[36m│ ├|| \u001b[32mGPU: \u001b[0m",
+      "keyColor": "green",
+    },
+    {
+      "type": "memory",
+      "key": "\u001b[36m│ ├|| \u001b[32mRAM: \u001b[0m",
+      "keyColor": "green",
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[36m└---─────────────---──────────────────────---─────────────---┘\u001b[0m",
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": "\u001b[36m┌---───────────────────---─\u001b[1;33mSoftware\u001b[0m\u001b[36m─---───────────────────---┐\u001b[0m",
+    },
+    {
+      "type": "os",
+      "key": "\u001b[36m│ ├|| \u001b[33mOS: \u001b[0m",
+      "keyColor": "cyan",
+    },
+    {
+      "type": "kernel",
+      "key": "\u001b[36m│ ├|| \u001b[33mKernel: \u001b[0m",
+      "keyColor": "cyan",
+    },
+    {
+      "type": "packages",
+      "key": "\u001b[36m│ ├|| \u001b[33mPackages: \u001b[0m",
+      "keyColor": "cyan",
+    },
+    {
+      "type": "shell",
+      "key": "\u001b[36m│ ├|| \u001b[33mShell: \u001b[0m",
+      "keyColor": "cyan",
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[36m├---────────────---────────────────────---────────────────---|\u001b[0m",
+    },
+    {
+      "type": "de",
+      "key": "\u001b[36m│ ├|| \u001b[32mDE: \u001b[0m",
+      "keyColor": "green",
+    },
+    {
+      "type": "wm",
+      "key": "\u001b[36m│ ├|| \u001b[32mWM: \u001b[0m",
+      "keyColor": "green",
+    },
+    {
+      "type": "wmtheme",
+      "key": "\u001b[36m│ ├|| \u001b[32mWM Theme: \u001b[0m",
+      "keyColor": "green",
+    },
+    {
+      "type": "terminal",
+      "key": "\u001b[36m│ ├|| \u001b[32mTerminal: \u001b[0m",
+      "keyColor": "green",
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[36m└---────────────---────────────────────---────────────────---┘\u001b[0m",
+    },
+    "break",
+  ],
+}

@@ -1,0 +1,13 @@
+
+2024/11/25 (09:00:01) | ===> btop++ v.1.4.0
+2024/11/25 (09:00:01) | WARNING: Config value update_ms set too low (<100).
+
+2024/11/25 (09:00:14) | ===> btop++ v.1.4.0
+2024/11/25 (09:00:14) | WARNING: Config value update_ms set too low (<100).
+
+2024/11/25 (09:34:33) | ===> btop++ v.1.4.0
+2024/11/25 (09:34:33) | ERROR: No response from Runner thread, quitting!
+
+2024/11/28 (13:27:02) | ===> btop++ v.1.4.0
+2024/11/28 (13:27:02) | WARNING: Failed to join _runner thread on exit!
+2024/11/28 (13:27:02) | ERROR: No response from Runner thread, quitting!

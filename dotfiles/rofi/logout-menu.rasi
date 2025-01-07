@@ -1,0 +1,91 @@
+configuration {
+  modi:                     "drun";
+  show-icons:               false;
+  font:                     "JetBrainsMono Nerd Font Bold 8";
+}
+
+@theme "~/.config/rofi/theme.rasi"
+
+/* ----------------------- Main Window ----------------------- */
+
+window {
+  enabled:                  true;
+  location:                 northeast;
+  anchor:                   north;
+  y-offset:                 3px;
+  x-offset:                 -3px;
+  height:                   192px;
+  width:                    150px;
+  fullscreen:               false;
+  transparency:             "real";
+  border:                   2px;
+  border-radius:            0;
+  border-color:             @main-br;
+  background-color:         @main-bg;
+  
+  children:                 [ "mainbox" ];
+}
+
+/* ---------------------- Main Container ---------------------- */
+
+mainbox {
+  enabled:                  true;
+  orientation:              vertical;
+  padding:                  2.2px 0;
+  background-color:         inherit;
+  text-color:               @main-fg;
+  
+  children:                 [ "listbox" ];
+}
+
+/* ------------------------ List Container -------------------- */
+
+listbox {
+  enabled:                  true;
+  orientation:              vertical;
+  background-color:         inherit;
+  
+  children:                 [ "listview" ];
+}
+
+/* ------------------------- List View ------------------------ */
+
+listview {
+  enabled:                  true;
+  layout:                   vertical;
+  cycle:                    false;
+  dynamic:                  true;
+  fixed-height:             true;
+  fixed-columns:            false;
+  expand:                   false;
+  reverse:                  false;
+  columns:                  1;
+  lines:                    6;
+  padding:                  6.4px 8px;
+  background-color:         inherit;
+}
+
+/* ---------------------- List Elements ----------------------- */
+
+element {
+  enabled:                  true;
+  padding:                  6.4px;
+  cursor:                   pointer;
+  background-color:         transparent;
+  text-color:               @main-fg;
+}
+
+element selected.normal {
+  border-radius:            0;
+  background-color:         @select-bg;
+  text-color:               @select-fg;
+}
+
+/* ---------------------- Element Text ------------------------ */
+
+element-text {
+  enabled:                  true;
+  cursor:                   inherit;
+  background-color:         transparent;
+  text-color:               inherit;
+}
