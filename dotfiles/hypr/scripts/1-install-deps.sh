@@ -41,6 +41,7 @@ system_packages=(
 # Wallpaper setting packages
 wallpaper_packages=(
   "feh"         # Simple image viewer and wallpaper setter
+  "shotwell"
 )
 
 # Performance monitoring and system utilities
