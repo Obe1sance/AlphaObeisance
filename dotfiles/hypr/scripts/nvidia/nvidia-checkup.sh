@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#The purpose of this script is to ensure your rig is set up for optimal Nvidia compatability. Executing it simply runs checks to ensure appropriate packages and modules are installed and enabled, and reports NVIDIA
+#compatability status to terminal.
+
 # Function to check if a command exists
 command_exists() {
     command -v "$1" &> /dev/null

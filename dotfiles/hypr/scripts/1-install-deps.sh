@@ -48,12 +48,13 @@ wallpaper_packages=(
 performance_packages=(
   "btop"        # A resource monitor (CPU, memory, disk, etc.)
   "fastfetch"   # A system information fetcher (useful for prompt customization)
+  "nvtop"
 )
 
 # File management and navigation utilities
 file_management_packages=(
   "ranger"      # A terminal file manager
-  "thunar"
+  "thunar"      # A gui based file manager
 )
 
 # Application launchers

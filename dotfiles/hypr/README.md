@@ -3,6 +3,7 @@ Hyprland Desktop Configuration on Arch Linux
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\//////////////////////////////////////////////////#
 ###                         NVIDIA CONFIGURATION                                    ###
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\//////////////////////////////////////////////////#
+## NVIDIA compatability check script available in /hypr/scripts/nvidia. Execute with ' bash nvidia-checkup.sh  `
 
 # - NVIDIA: https://wiki.hyprland.org/Nvidia/
 # - For NVIDIA Stability it simply tells you this
@@ -13,6 +14,8 @@ Hyprland Desktop Configuration on Arch Linux
 # - E: Set "options nvidia_drm modeset=1 fbdev=1" without quotations ofc.
 # - F: Enjoy Hyprland with Nvidia.
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\//////////////////////////////////////////////////#
+
+## NOTE: I have included the script /hypr/scripts/1-install.deps.sh that should theoretically install the dependancies if you want to akin your build to mine.
 
 ## File Structure Overview
 ~/.config/hypr/
