@@ -17,7 +17,7 @@ while true; do
     clear
     echo -e "${TEAL}=== Menu ===${NC}"
     echo -e "${GREEN}1.${NC} Install Ollama & OpenWebUI"
-    echo -e "${GREEN}2.${NC} Install Stable Diffusion"
+    echo -e "${GREEN}2.${NC} Install Stable Diffusion & AUTOMATIC1111"
     echo -e "${GREEN}3.${NC} Update OpenWebUI using Watchtower"
     echo -e "${GREEN}4.${NC} Exit"
     echo -n "Enter your choice: "
