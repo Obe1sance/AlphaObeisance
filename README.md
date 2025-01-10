@@ -9,7 +9,7 @@ The **AlphaObeisance** repository is designed for:
 - Providing convenient utilities and scripts for Linux users.
 
 ### Server URL
-- Gitea Server Address: [AlphaObeisance](https://github.com/Obe1sance/AlphaObeisance.git)
+[AlphaObeisance](https://github.com/Obe1sance/AlphaObeisance.git)
 
 ## Usage Instructions
 
