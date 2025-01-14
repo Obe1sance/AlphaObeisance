@@ -10,15 +10,6 @@
 # system administrators or users who want to configure firewall rules to protect
 # their system from unauthorized access while allowing necessary communication.
 
-# Use Case:
-# - When you want to secure your Linux system by blocking all unnecessary incoming
-#   and outgoing traffic, but still need access to essential services like web browsing.
-# - When you need to configure firewall rules for specific incoming and outgoing
-#   traffic based on IP addresses and ports, such as for a web server, database, or
-#   other network services.
-# - This script allows you to quickly configure your firewall settings by interacting
-#   with the user and asking which ports and IPs should be allowed through.
-
 # Define some color variables to make messages more readable and visually appealing
 GREEN='\033[0;32m'    # Green for success messages
 TEAL='\033[0;36m'     # Teal for informational messages
@@ -47,70 +38,47 @@ echo -e "${TEAL}Enabling UFW firewall...${RESET}"
 # This activates the firewall with the settings configured so far.
 sudo ufw enable
 
-# Step 5: Ask the user if they want to allow any additional outgoing ports
-echo -e "${TEAL}Would you like to allow any additional outgoing ports?${RESET} (y/n)"
-read -p "Please enter your choice: " allow_outgoing
+# Step 5: Ask the user if they want to permit access to ports via specific IPs
+echo -e "${TEAL}Would you like to permit access to specific ports via specific IPs? (y/n)${RESET}"
+read -p "Please enter your choice: " permit_access
 
-if [[ "$allow_outgoing" == "y" || "$allow_outgoing" == "Y" ]]; then
+if [[ "$permit_access" == "y" || "$permit_access" == "Y" ]]; then
   while true; do
-    # If the user answers "yes", prompt them to specify additional outgoing ports
-    echo -e "${TEAL}Please enter the outgoing ports you would like to allow (comma-separated, e.g., 3306, 8080):${RESET}"
+    # If the user answers "yes", prompt them to specify the IP addresses
+    echo -e "${TEAL}Please enter the IP addresses you want to permit (comma-separated, e.g., 192.168.0.10, 10.0.0.5):${RESET}"
+    read -p "IPs: " permit_from
+    echo -e "${TEAL}Please enter the ports you would like to allow (comma-separated, e.g., 22, 8080):${RESET}"
     read -p "Ports: " ports
 
-    # Process the input to split the comma-separated list into individual ports
+    # Process the input to split the comma-separated lists into individual IPs and ports
+    IFS=',' read -ra IP_ARRAY <<< "$permit_from"
     IFS=',' read -ra PORT_ARRAY <<< "$ports"
-    for port in "${PORT_ARRAY[@]}"; do
-      port=$(echo $port | xargs)  # Trim any spaces around the port number
-      echo -e "${TEAL}Allowing outgoing traffic on port ${port}...${RESET}"
-      sudo ufw allow out $port
-    done
-    echo -e "${GREEN}Outgoing ports have been successfully allowed.${RESET}"
 
-    # Ask if the user wants to add more outgoing rules
-    echo -e "${TEAL}Would you like to allow more outgoing ports?${RESET} (y/n)"
-    read -p "Enter your choice: " another_outgoing
-    if [[ "$another_outgoing" != "y" && "$another_outgoing" != "Y" ]]; then
+    # Loop through the IPs and ports and apply the UFW rules for both incoming and outgoing traffic
+    for ip in "${IP_ARRAY[@]}"; do
+      for port in "${PORT_ARRAY[@]}"; do
+        ip=$(echo $ip | xargs)  # Trim any spaces around the IP address
+        port=$(echo $port | xargs)  # Trim any spaces around the port number
+        echo -e "${TEAL}Allowing incoming and outgoing traffic for ${ip} on port ${port}...${RESET}"
+        sudo ufw allow from $ip to any port $port
+        sudo ufw allow out to $ip port $port
+      done
+    done
+
+    echo -e "${GREEN}Traffic has been successfully allowed for the specified IPs on the specified ports.${RESET}"
+
+    # Ask if the user wants to add more traffic rules
+    echo -e "${TEAL}Would you like to allow more traffic for other IPs?${RESET} (y/n)"
+    read -p "Enter your choice: " another_traffic
+    if [[ "$another_traffic" != "y" && "$another_traffic" != "Y" ]]; then
       break
     fi
   done
 fi
 
-# Step 6: Ask the user if they want to allow any incoming ports
-echo -e "${TEAL}Would you like to allow any incoming ports?${RESET} (y/n)"
-read -p "Please enter your choice: " allow_incoming
-
-if [[ "$allow_incoming" == "y" || "$allow_incoming" == "Y" ]]; then
-  while true; do
-    # If the user answers "yes", prompt them to specify which IP addresses and ports to allow incoming traffic from
-    echo -e "${TEAL}Please enter the IP address you want to allow access from (e.g., 192.168.0.10):${RESET}"
-    read -p "Example: 192.168.0.10: " permit_from
-    echo -e "${TEAL}Please enter the incoming ports you would like to allow (comma-separated, e.g., 22, 8080):${RESET}"
-    read -p "Ports: " ports
-
-    # Process the input to split the comma-separated list into individual ports
-    IFS=',' read -ra PORT_ARRAY <<< "$ports"
-    for port in "${PORT_ARRAY[@]}"; do
-      port=$(echo $port | xargs)  # Trim any spaces around the port number
-      echo -e "${TEAL}Allowing incoming traffic from ${permit_from} on port ${port}...${RESET}"
-      sudo ufw allow from $permit_from to any port $port
-    done
-    echo -e "${GREEN}Incoming traffic has been successfully allowed from ${permit_from} on the specified ports.${RESET}"
-
-    # Ask if the user wants to add more incoming rules from other devices
-    echo -e "${TEAL}Would you like to allow incoming traffic from another device?${RESET} (y/n)"
-    read -p "Enter your choice: " another_device
-    if [[ "$another_device" != "y" && "$another_device" != "Y" ]]; then
-      break
-    fi
-  done
-
-  # Ask if the user wants to add more incoming rules for other devices
-  echo -e "${TEAL}Would you like to allow additional incoming ports for other devices?${RESET} (y/n)"
-  read -p "Enter your choice: " another_incoming
-  if [[ "$another_incoming" != "y" && "$another_incoming" != "Y" ]]; then
-    break
-  fi
-fi
+# Step 6: Reload UFW to apply all the changes
+echo -e "${TEAL}Reloading UFW to apply changes...${RESET}"
+sudo ufw reload
 
 # Step 7: Show the current UFW status to confirm the changes
 echo -e "${GREEN}UFW configuration completed. Here's the current UFW status:${RESET}"
